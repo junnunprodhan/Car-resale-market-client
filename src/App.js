@@ -8,7 +8,7 @@ import { ToastContainer, toast } from 'react-toastify';
 
 function App() {
   return (
-    <div>
+    <div className='w-10/12 mx-auto'>
       <RouterProvider router={routes} ></RouterProvider>
       <ToastContainer />
     </div>

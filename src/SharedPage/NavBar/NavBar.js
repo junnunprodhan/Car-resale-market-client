@@ -77,7 +77,7 @@ const NavBar = () => {
               <li>
                 <a
                   href="/"
-                  class="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                  class="inline-flex items-center justify-center h-12 px-6 font-medium rounded  bg-rose-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-rose-700 focus:outline-none focus:ring active:bg-rose-500 sm:w-auto"
                   aria-label="Sign up"
                   title="Sign up"
                 >
@@ -199,7 +199,7 @@ const NavBar = () => {
                         <li>
                           <a
                             href="/"
-                            class="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                            class="inline-flex items-center justify-center w-full h-12rounded bg-rose-600 px-12 py-3 text-sm font-medium text-white shadow rounded hover:bg-rose-700 focus:outline-none focus:ring active:bg-rose-500 sm:w-auto"
                             aria-label="Sign up"
                             title="Sign up"
                           >

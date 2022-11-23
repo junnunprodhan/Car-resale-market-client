@@ -18,8 +18,8 @@ const Card = ({ product }) => {
               </div>
             </div>
             <h4 className="text-xl">Seller:{product.userInfo.displayName}</h4>
-            <p>Resale Price:{product.resalePrice}</p>
-            <p>Original Price:{product.originalPrice}</p>
+            <p>Resale Price:${product.resalePrice}</p>
+            <p>Original Price:${product.originalPrice}</p>
           </div>
         </div>
 

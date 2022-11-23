@@ -61,7 +61,7 @@ const AdviserItems = () => {
             
         },
         {
-            picture:'https://crdms.images.consumerreports.org/c_lfill,w_720,q_auto,f_auto/prod/cars/chrome-historical/white/USB60ACC021A1101', 
+            picture:'https://imgd-ct.aeplcdn.com/1056x660/n/bpeedua_1542755.jpg?q=75', 
             name :'Aura Mahindro',
             category:'Acura', 
             location:'Dhaka', 

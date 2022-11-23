@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const NavBar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -53,25 +54,16 @@ const NavBar = () => {
                 </a>
               </li>
               <li>
-                <a
-                  href="/"
+                <Link
+                  to="/blog"
                   aria-label="Product pricing"
                   title="Product pricing"
                   class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
                 >
-                  Pricing
-                </a>
+                  Blog
+                </Link>
               </li>
-              <li>
-                <a
-                  href="/"
-                  aria-label="About us"
-                  title="About us"
-                  class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
-                >
-                  About us
-                </a>
-              </li>
+             
             </ul>
             <ul class="flex items-center hidden space-x-8 lg:flex">
               <li>
@@ -177,25 +169,16 @@ const NavBar = () => {
                           </a>
                         </li>
                         <li>
-                          <a
-                            href="/"
+                          <Link
+                            to="/blog"
                             aria-label="Product pricing"
                             title="Product pricing"
                             class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                           >
-                            Pricing
-                          </a>
+                            Blog
+                          </Link>
                         </li>
-                        <li>
-                          <a
-                            href="/"
-                            aria-label="About us"
-                            title="About us"
-                            class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                          >
-                            About us
-                          </a>
-                        </li>
+                       
                         <li>
                           <a
                             href="/"

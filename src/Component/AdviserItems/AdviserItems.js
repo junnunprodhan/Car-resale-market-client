@@ -117,6 +117,63 @@ const AdviserItems = () => {
             } 
             
         },
+        {
+            picture:'https://static.tcimg.net/vehicles/primary/0e6ca966b5ffb579/2023-BMW-2_Series-white-full_color-driver_side_front_quarter.png', 
+            name :'BMW 125',
+            category:'BMW', 
+            location:'Dhaka', 
+            resalePrice:'32000', 
+            originalPrice:'150000',
+            useTime:'2', 
+            postedTime:'11/09/2022', 
+            userInfo:{
+                userId:'3',
+                displayName:'korim islam ',
+                email:'korim@gamil.com',
+                photoURL:'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8&w=1000&q=80',
+                Status:'Verified',
+                role:'seller'
+            } 
+            
+        },
+        {
+            picture:'https://static.tcimg.net/vehicles/primary/0e6ca966b5ffb579/2023-BMW-2_Series-white-full_color-driver_side_front_quarter.png', 
+            name :'BMW 125',
+            category:'BMW', 
+            location:'Dhaka', 
+            resalePrice:'32000', 
+            originalPrice:'150000',
+            useTime:'2', 
+            postedTime:'11/09/2022', 
+            userInfo:{
+                userId:'3',
+                displayName:'korim islam ',
+                email:'korim@gamil.com',
+                photoURL:'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8&w=1000&q=80',
+                Status:'Verified',
+                role:'seller'
+            } 
+            
+        },
+        {
+            picture:'https://static.tcimg.net/vehicles/primary/0e6ca966b5ffb579/2023-BMW-2_Series-white-full_color-driver_side_front_quarter.png', 
+            name :'BMW 125',
+            category:'BMW', 
+            location:'Dhaka', 
+            resalePrice:'32000', 
+            originalPrice:'150000',
+            useTime:'2', 
+            postedTime:'11/09/2022', 
+            userInfo:{
+                userId:'3',
+                displayName:'korim islam ',
+                email:'korim@gamil.com',
+                photoURL:'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8&w=1000&q=80',
+                Status:'Verified',
+                role:'seller'
+            } 
+            
+        },
     ]
     return (
         <div className='mt-10'>

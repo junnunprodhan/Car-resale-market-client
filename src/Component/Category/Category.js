@@ -2,29 +2,24 @@ import React from "react";
 
 const Category = () => {
   return (
-    <div className="max-w-xs rounded-md shadow-md dark:bg-gray-900 dark:text-gray-100">
-      <img
-        src="https://source.unsplash.com/random/300x300/?2"
-        alt=""
-        className="object-cover object-center w-full rounded-t-md h-72 dark:bg-gray-500"
-      />
-      <div className="flex flex-col justify-between p-6 space-y-8">
-        <div className="space-y-2">
-          <h2 className="text-3xl font-semibold tracking-wide">
-            Donec lectus leo
-          </h2>
-          <p className="dark:text-gray-100">
-            Curabitur luctus erat nunc, sed ullamcorper erat vestibulum eget.
-          </p>
-        </div>
-        <button
-          type="button"
-          className="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md dark:bg-violet-400 dark:text-gray-900"
+    <section class="rounded-3xl shadow-2xl">
+      <div class="p-8 text-center sm:p-12">
+        <p class="text-sm font-semibold uppercase tracking-widest text-pink-500">
+          Your order is on the way
+        </p>
+
+        <h2 class="mt-6 text-3xl font-bold">
+          Thanks for your purchase, we're getting it ready!
+        </h2>
+
+        <a
+          class="mt-8 inline-block w-full rounded-full bg-pink-600 py-4 text-sm font-bold text-white shadow-xl"
+          href=""
         >
-          Read more
-        </button>
+          Track Order
+        </a>
       </div>
-    </div>
+    </section>
   );
 };
 

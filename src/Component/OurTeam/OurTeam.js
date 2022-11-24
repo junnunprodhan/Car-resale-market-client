@@ -2,7 +2,9 @@ import React from 'react';
 
 const OurTeam = () => {
     return (
-        <div className='mt-10'>
+        <div>
+             <div className="divider divider-vertically mt-10"></div>
+            <div>
             <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
       <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
         <div>
@@ -39,11 +41,10 @@ const OurTeam = () => {
           our talented team of professionals
         </h2>
         <p className="text-base text-gray-700 md:text-lg">
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-          accusantium doloremque rem aperiam, eaque ipsa quae.
+          The car resale market is one of the best market. you buy and sell your car in resonable price and your dream will be come true
         </p>
       </div>
-      <div className="grid gap-10 row-gap-8 mx-auto sm:row-gap-10 lg:max-w-screen-lg sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-10 lg:shadow-md lg:p-6  row-gap-8 mx-auto sm:row-gap-10 lg:max-w-screen-lg sm:grid-cols-2 lg:grid-cols-3">
         <div className="flex">
           <img
             className="object-cover w-20 h-20 mr-4 rounded-full shadow"
@@ -74,7 +75,7 @@ const OurTeam = () => {
           />
           <div className="flex flex-col justify-center">
             <p className="text-lg font-bold">Anthony Geek</p>
-            <p className="text-sm text-gray-800">CTO, Lorem Inc.</p>
+            <p className="text-sm text-gray-800">CTO, Car resale market Inc.</p>
           </div>
         </div>
         <div className="flex">
@@ -85,7 +86,7 @@ const OurTeam = () => {
           />
           <div className="flex flex-col justify-center">
             <p className="text-lg font-bold">Alice Melbourne</p>
-            <p className="text-sm text-gray-800">Human Resources</p>
+            <p className="text-sm text-gray-800">Product Resources</p>
           </div>
         </div>
         <div className="flex">
@@ -96,7 +97,7 @@ const OurTeam = () => {
           />
           <div className="flex flex-col justify-center">
             <p className="text-lg font-bold">Martin Garix</p>
-            <p className="text-sm text-gray-800">Bad boy</p>
+            <p className="text-sm text-gray-800">ceo the company</p>
           </div>
         </div>
         <div className="flex">
@@ -145,6 +146,7 @@ const OurTeam = () => {
         </div>
       </div>
     </div>
+        </div>
         </div>
     );
 };

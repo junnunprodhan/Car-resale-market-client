@@ -4,6 +4,7 @@ import logo1 from '../../assets/logo1.png'
 const Footer = () => {
   return (
     <footer className="px-4 divide- mt-10 dark:bg-gray-800 dark:text-gray-100">
+        <div className="divider divider-vertically mt-10"></div>
       <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
         <div className="lg:w-1/3">
           <a

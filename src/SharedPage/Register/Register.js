@@ -30,7 +30,7 @@ const Register = () => {
       .then((res) => res.json())
       .then((data) => {
         const photoURL = data.data?.url;
-        // console.log(data.data?.url);
+        console.log(data.data?.url);
         createUser(email,password)
         .then(result=>{
           profileContent(name,photoURL)
@@ -41,6 +41,20 @@ const Register = () => {
 
       })
       .catch((er) => console.log(er));
+
+
+      // data send db
+    fetch('http://localhost:5000/users',{
+      method:"POST",
+      headers:{
+        "content-type":"application/json"
+      },
+      body:JSON.stringify(dbUser)
+    })
+    .then(res=>res.json())
+    .then(result=>{
+      console.log(result)
+    })
       
         
   };
@@ -55,7 +69,7 @@ const Register = () => {
     SetDbUser(newUser);
     
 }
-console.log(dbUser)
+
 
   const profileContent=(nm,pu)=>{
     const profile={
@@ -109,6 +123,7 @@ console.log(dbUser)
               </label>
               <select
               onBlur={handleBlur}
+              required
                 name="role"
                 className="select w-full max-w-xs input input-bordered"
               >

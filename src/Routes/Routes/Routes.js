@@ -1,11 +1,13 @@
 import { createBrowserRouter } from "react-router-dom";
 import Advertisement from "../../Component/Advertisement/Advertisement";
 import Blog from "../../Component/Blog/Blog";
+import AddProduct from "../../Component/DashBoard/AddProduct/AddProduct";
 import DashBoard from "../../Component/DashBoard/DashBoard/DashBoard";
 import InputCategory from "../../Component/DashBoard/InputCategory/InputCategory";
 import ErrorPage from "../../Component/ErrorPage/ErrorPage";
 import Home from "../../Component/Home/Home";
 import Seller from "../../Component/Seller/Seller";
+import SIngleCategory from "../../Component/SingleCategory/SIngleCategory";
 import User from "../../Component/User/User";
 import DashBoardLayout from "../../Layouts/DashBoardLayouts/DashBoardLayout";
 import Main from "../../Layouts/Main/Main";
@@ -35,6 +37,11 @@ export const routes = createBrowserRouter([
                 path:'/register',
                 element:<Register></Register>
             },
+            {
+                path: '/categoryProduct/:id',
+                element: <SIngleCategory></SIngleCategory>,
+                loader: ({params}) => fetch(`http://localhost:5000/product/${params.id}`)
+            },
            
         ]
     },
@@ -61,7 +68,12 @@ export const routes = createBrowserRouter([
             {
                 path:'/dashBoard/seller',
                 element:<Seller></Seller>
-            }
+            },
+            {
+                path:'/dashBoard/addProduct',
+                element:<AddProduct></AddProduct>
+            },
+            
         ]
     }
 ])

@@ -1,25 +1,17 @@
 import React from "react";
+import {Link} from 'react-router-dom'
 
-const Category = () => {
+const Category = ({category}) => {
+
+
   return (
-    <section class="rounded-3xl shadow-2xl">
-      <div class="p-8 text-center sm:p-12">
-        <p class="text-sm font-semibold uppercase tracking-widest text-pink-500">
-          Your order is on the way
-        </p>
-
-        <h2 class="mt-6 text-3xl font-bold">
-          Thanks for your purchase, we're getting it ready!
-        </h2>
-
-        <a
-          class="mt-8 inline-block w-full rounded-full bg-pink-600 py-4 text-sm font-bold text-white shadow-xl"
-          href=""
-        >
-          Track Order
-        </a>
-      </div>
-    </section>
+    <div className="rounded-2xl bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-1 shadow-xl">
+            <Link to={`/categoryProduct/${category.category}`} className="block rounded-xl bg-white p-6 sm:p-8" href="">
+                <div className=" sm:pr-8">
+                    <h3 className="text-xl font-bold text-center text-gray-900">{category.category}</h3>
+                </div>
+            </Link>
+        </div>
   );
 };
 

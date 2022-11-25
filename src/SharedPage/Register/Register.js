@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
+import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
 
 const Register = () => {
+  const {createUser,updateName}= useContext(AuthContext)
+  const [dbUser, SetDbUser]=useState({})
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -11,7 +15,8 @@ const Register = () => {
     const photo = form.photoURL.files[0];
     const formData = new FormData();
     formData.append("image", photo);
-    console.log(name, email, password);
+    
+// image bb 
     fetch(
       `https://api.imgbb.com/1/upload?key=${process.env.REACT_APP_ImageKey}`,
       {
@@ -21,10 +26,41 @@ const Register = () => {
     )
       .then((res) => res.json())
       .then((data) => {
-        console.log(data.data?.url);
+        const photoURL = data.data?.url;
+        // console.log(data.data?.url);
+        createUser(email,password)
+        .then(result=>{
+          profileContent(name,photoURL)
+          console.log(result.user)
+          toast.success('successfully register')
+        })
+
       })
       .catch((er) => console.log(er));
+      
+        
   };
+
+
+  const handleBlur=event=>{
+    const FieldName=event.target.name;
+    const FieldValue=event.target.value;
+    console.log(FieldName, FieldValue);
+    const newUser={...dbUser};
+    newUser[FieldName]=FieldValue;
+    SetDbUser(newUser);
+    
+}
+console.log(dbUser)
+
+  const profileContent=(nm,pu)=>{
+    const profile={
+      displayName:nm,
+      photoURL:pu
+    }
+    updateName(profile)
+
+  }
   return (
     <div className="flex justify-center items-center pt-8">
       <div className="flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-100 text-gray-900">
@@ -44,6 +80,7 @@ const Register = () => {
                 Name
               </label>
               <input
+              onBlur={handleBlur}
                 type="text"
                 name="name"
                 id="name"
@@ -67,6 +104,7 @@ const Register = () => {
                 <span className="label-text">role</span>
               </label>
               <select
+              onBlur={handleBlur}
                 name="role"
                 className="select w-full max-w-xs input input-bordered"
               >
@@ -79,6 +117,7 @@ const Register = () => {
                 Email address
               </label>
               <input
+              onBlur={handleBlur}
                 type="email"
                 name="email"
                 id="email"

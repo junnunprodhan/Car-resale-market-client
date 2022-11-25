@@ -1,10 +1,13 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
 
 const Register = () => {
   const {createUser,updateName}= useContext(AuthContext)
+  const navigate =useNavigate()
+  const location = useLocation()
+  const from = location.state?.from?.pathname || '/'
   const [dbUser, SetDbUser]=useState({})
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -32,6 +35,7 @@ const Register = () => {
         .then(result=>{
           profileContent(name,photoURL)
           console.log(result.user)
+          navigate(from, { replace: true })
           toast.success('successfully register')
         })
 

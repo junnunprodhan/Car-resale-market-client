@@ -1,8 +1,13 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo1 from '../../assets/logo.png';
+import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 const NavBar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const {user,logout}=useContext(AuthContext)
+    const handleLogOut= () =>{
+      logout()
+  }
     return (
         <div class="bg-gray-900">
         <div class="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
@@ -52,26 +57,49 @@ const NavBar = () => {
              
             </ul>
             <ul class="flex items-center hidden space-x-8 lg:flex">
-              <li>
-                <Link
-                  to="/register"
-                  class="inline-flex items-center justify-center h-12 px-6 font-medium rounded  bg-rose-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-rose-700 focus:outline-none focus:ring active:bg-rose-500 sm:w-auto"
-                  aria-label="Sign up"
-                  title="Sign up"
-                >
-                  Register
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/login"
-                  class="inline-flex items-center justify-center h-12 px-6 font-medium rounded  bg-rose-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-rose-700 focus:outline-none focus:ring active:bg-rose-500 sm:w-auto"
-                  aria-label="Login"
-                  title="Login"
-                >
-                  Login
-                </Link>
-              </li>
+
+              {
+                user?.uid?
+                 <>
+               <li>
+                 <div
+                 onClick={handleLogOut}
+                   to="/login"
+                   class="inline-flex items-center justify-center h-12 px-6 font-medium rounded  bg-rose-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-rose-700 focus:outline-none focus:ring active:bg-rose-500 sm:w-auto"
+                   aria-label="Login"
+                   title="Login"
+                 >
+                  Log Out
+                 </div>
+               </li>
+                 </>
+
+                 : <> <li>
+                 <Link
+                   to="/register"
+                   class="inline-flex items-center justify-center h-12 px-6 font-medium rounded  bg-rose-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-rose-700 focus:outline-none focus:ring active:bg-rose-500 sm:w-auto"
+                   aria-label="Sign up"
+                   title="Sign up"
+                 >
+                   Register
+                 </Link>
+               </li>
+               <li>
+                 <Link
+                   to="/login"
+                   class="inline-flex items-center justify-center h-12 px-6 font-medium rounded  bg-rose-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-rose-700 focus:outline-none focus:ring active:bg-rose-500 sm:w-auto"
+                   aria-label="Login"
+                   title="Login"
+                 >
+                   Login
+                 </Link>
+               </li>
+               </>
+
+
+
+              }
+              
             </ul>
             <div class="lg:hidden">
               <button

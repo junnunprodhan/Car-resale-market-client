@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Card = ({ product }) => {
+const Card = ({ product,handleDelete }) => {
   return (
     <div>
             <Link href="" className="group relative block h-96">
@@ -23,7 +23,8 @@ const Card = ({ product }) => {
                     <p className="mt-4">Selling Price : ${product.resalePrice}</p>
                     <p className="mt-4">Product Condition :  {product.condition}</p>
 
-                    <button className="mt-8 font-bold btn btn-sm text-white bg-secondary">View Details</button>
+                    <button className="mt-8 font-bold m-6 btn btn-sm text-white bg-black">Advertise</button>
+                    <button onClick={()=>handleDelete(product._id)} className="mt-8 font-bold btn btn-sm text-white bg-red-500 hover:bg-red-700">Delete</button>
                     </div>
                 </div>
                 </Link>

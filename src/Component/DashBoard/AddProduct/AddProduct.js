@@ -1,10 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { AuthContext } from "../../../Contexts/AuthProvider/AuthProvider";
 
 const AddProduct = () => {
   const { user } = useContext(AuthContext);
   const [category, setCategory]=useState([])
+  const navigate=useNavigate()
   console.log(user);
   const { email, photoURL } = user;
   const displayName = user?.displayName;
@@ -16,7 +18,7 @@ const AddProduct = () => {
   console.log(userInfo);
   const date = new Date().toLocaleString();
 
-  const [product, SetProduct] = useState({ userInfo, date, Status: "panding" });
+  const [product, SetProduct] = useState({ userInfo, date, Status: "panding",email });
   console.log(product);
 
   // Handle Submit
@@ -36,6 +38,8 @@ const AddProduct = () => {
         console.log(result);
         toast.success("Product Added");
         event.target.reset()
+        navigate('/dashBoard/myProducts')
+
       });
   };
 

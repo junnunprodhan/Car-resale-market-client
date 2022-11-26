@@ -74,7 +74,7 @@ const Seller = () => {
                         {
                             dbUser.map((uInfo,i)=><tr key={uInfo._id}>
                             <th>{i+1}</th> 
-                            <td>{uInfo.displayName}</td>
+                            <td>{uInfo.name}</td>
                             <td>{uInfo.email}</td> 
                             <td>{uInfo.role}</td> 
                             <td> <button className='btn btn-sm bg-warning'> UPDATE</button> </td> 

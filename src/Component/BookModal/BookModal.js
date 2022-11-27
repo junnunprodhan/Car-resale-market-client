@@ -1,20 +1,71 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
 
 const BookModal = ({bookItem}) => {
    
     const {Condition, Description, category, picture, resalePrice, date, location, originalPrice, title, userInfo}=bookItem
-    const{displayName, photoURL, email}=userInfo
-    const handleSubmit=event=>{
+    const{user}=useContext(AuthContext)
+    const photoURL=user?.photoURL;
+    const email =user?.email
+    const displayName=user.displayName;
+    const navigate=useNavigate()
 
-    }
     console.log(Condition, Description, category, picture, resalePrice, date, location, originalPrice, title, userInfo);
+    const handleBooking = event => {
+        event.preventDefault();
+        const form = event.target;
+        const phoneNumber = form.phoneNumber.value;
+        const meetTime =form.meetTime.value;
+        const meetLocation=form.meetLocation.value;
+       
+      
+        const booking = {
+            title,
+            userName: displayName,
+            userEmail: email,
+            price: resalePrice,
+            phoneNumber,
+            meetLocation,
+            meetTime,
+            picture,
+            photoURL
+           
+        }
+        console.log(title,displayName,email,resalePrice,phoneNumber,meetLocation,meetTime,photoURL)
+        fetch('http://localhost:5000/booking', {
+            method: "POST",
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(booking)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.acknowledged) {
+                  
+                    toast.success('booking confirmed')
+                    navigate('/dashBoard/myOrders')
+                    
+                }
+            })
+    }
+
+
+
+
+
+
+
   return (
     <>
       <input type="checkbox" id="booking-modal" className="modal-toggle" />
       <div className="modal modal-bottom sm:modal-middle">
         <div className="modal-box">
           <form
-            onSubmit={handleSubmit}
+            onSubmit={handleBooking}
             className="card my-8  p-5 w-full shadow-2xl bg-base-100"
           >
             <div className="sm:card-body ">
@@ -48,7 +99,7 @@ const BookModal = ({bookItem}) => {
                 </label>
                 <input
                   type="text"
-                  name="Description"
+                  name="itemName"
                   placeholder={title}
                   readOnly
                   className="input input-bordered"

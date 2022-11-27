@@ -8,8 +8,9 @@ const SIngleCategory = () => {
   const [bookItem,setBookItem]=useState(null)
 
   return (
-    <div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-2">
+    <div className="mt-24">
+  
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {category.map((singleCate) => (
           <SingleProduct
             key={singleCate._id}

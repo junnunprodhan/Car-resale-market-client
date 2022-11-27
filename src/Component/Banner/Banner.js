@@ -1,51 +1,35 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 const Banner = () => {
-    return (
-        <section
-  className="relative bg-[url(https://www.topgear.com/sites/default/files/2022/07/9_1.jpg)] bg-cover bg-center mt-10 h-{250px} bg-no-repeat"
->
-  <div
-    className="absolute inset-0 bg-white/75 sm:bg-transparent sm:bg-gradient-to-r sm:from-white/95 sm:to-white/25"
-  ></div>
-
-  <div
-    className="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8"
-  >
-    <div className="max-w-xl text-center sm:text-left">
-      <h1 className="text-3xl font-extrabold sm:text-5xl">
-        Let us find
-
-        <strong className="block font-extrabold text-rose-700">
-          Your Car.
-        </strong>
-      </h1>
-
-      <p className="mt-4 max-w-lg sm:text-xl sm:leading-relaxed">
-        The Car resale market is one of the best market in the world.This market sell your used car and buy another used car.
-      </p>
-
-      <div className="mt-8 flex flex-wrap gap-4 text-center">
-        <Link
-          href="#"
-          className="block w-full rounded bg-rose-600 px-12 py-3 text-sm font-medium text-white shadow rounded hover:bg-rose-700 focus:outline-none focus:ring active:bg-rose-500 sm:w-auto"
-        >
-          Get Started
-        </Link>
-
-        <Link
-          href="#"
-          className="block w-full rounded bg-white px-12 py-3 text-sm font-medium text-rose-600 shadow hover:text-rose-700 focus:outline-none focus:ring active:text-rose-500 sm:w-auto"
-        >
-          Learn More
-        </Link>
+  return (
+    <section className="bg-white shadow-lg mt-10 mt-10">
+      <div className="container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
+        <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
+          <img
+            src='https://cdn.theatlantic.com/assets/media/img/sponsored/2016/02/automobile_in_the_cloud/resp-feature.png'
+            alt=""
+            className="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128"
+          />
+        </div>
+        <div className="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
+          <h1 className="lg:text-5xl font-bold  text-3xl">
+            This is our Car Market
+          </h1>
+          <div className="flex flex-col space-y-4 mt-5 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
+            <p>This is one of the best Car Buy and Sell Market.This Car Market is one of the best market in the world</p>
+            
+          </div>
+          <Link
+              to="/register"
+              className="px-8 py-3 text-lg mt-6 w-full lg:w-1/3 font-semibold rounded bg-red-500 hover:bg-red-700 text-white"
+            >
+              Get Start
+            </Link>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
-
-    );
+    </section>
+  );
 };
 
 export default Banner;

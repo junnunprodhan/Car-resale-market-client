@@ -11,7 +11,7 @@ import ErrorPage from "../../Component/ErrorPage/ErrorPage";
 import Home from "../../Component/Home/Home";
 import Seller from "../../Component/Seller/Seller";
 import SIngleCategory from "../../Component/SingleCategory/SIngleCategory";
-import User from "../../Component/User/User";
+
 import DashBoardLayout from "../../Layouts/DashBoardLayouts/DashBoardLayout";
 import Main from "../../Layouts/Main/Main";
 import Login from "../../SharedPage/Login/Login";
@@ -43,7 +43,7 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/categoryProduct/:id',
-                element: <SIngleCategory></SIngleCategory>,
+                element: <PrivateRoute><SIngleCategory></SIngleCategory></PrivateRoute>,
                 loader: ({params}) => fetch(`http://localhost:5000/product/${params.id}`)
             },
            
@@ -61,10 +61,7 @@ export const routes = createBrowserRouter([
                 path:'/dashBoard/inputCategory',
                 element:<InputCategory></InputCategory>
             },
-            {
-                path:'/dashBoard/user',
-                element:<User></User>
-            },
+           
             {
                 path:'/dashBoard/advertisement',
                 element:<Advertisement></Advertisement>

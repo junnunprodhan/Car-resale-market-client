@@ -8,7 +8,6 @@ const MyProducts = () => {
     const {user}=useContext(AuthContext)
     const [showProducts, setShowProducts]=useState([])
     const{email}=user
-    console.log(email,showProducts);
 
         useEffect(()=>{
             axios
@@ -16,6 +15,29 @@ const MyProducts = () => {
             .then((res) => setShowProducts(res.data));
         },[email])
 
+     const Status={
+        Status:"Advertise request"
+     }
+
+    const handleAdvertise=id=>{
+         
+        fetch(`http://localhost:5000/updateProduct/${id}`,{
+            method:"PUT",
+            headers:{
+                "content-type":"application/json"
+            },
+            body:JSON.stringify(Status)
+
+        })
+        .then (res=>res.json())
+        .then (result=>{
+            if(result.acknowledged){
+
+                toast.success('Advertisement request successful')
+            }
+        })
+    }
+        
     const handleDelete = id=>{
         const agree =window.confirm('you want to delete')
         if(agree){
@@ -35,9 +57,9 @@ const MyProducts = () => {
     
     return (
         <div className='mt-10'>
-            <h1 className='text-center text-5xl font-semibold text-rose-700 mb-10'>My Products</h1>
+            <h1 className='md:text-5xl text-3xl text-center mb-10 bg-gradient-to-r from-pink-500 via-red-500 to-red-900 shadow-xll lg:w-1/2 mx-auto p-4 font-bold text-white rounded-md'>My Products</h1>
             <div className='grid grid-cols-1 gap-6 m-5 lg:grid-cols-2'>
-                {showProducts.map(product=><Card handleDelete={handleDelete} product={product} key={product._id}></Card>)}
+                {showProducts.map(product=><Card handleDelete={handleDelete} handleAdvertise={handleAdvertise} product={product} key={product._id}></Card>)}
             </div>
         </div>
     );

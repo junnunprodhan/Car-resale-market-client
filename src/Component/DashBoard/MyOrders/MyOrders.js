@@ -34,7 +34,7 @@ const MyOrders = () => {
     return (
         <>
         <div>
-            <div className='text-center my-10'><p className='text-3xl font-bold text-red-700'>MY Total Orders: {setShowProducts[0]?.role} {showProducts.length}</p></div>
+            <div className='text-center my-10'><p className='md:text-5xl text-3xl text-center mb-10 bg-gradient-to-r from-pink-500 via-red-500 to-red-900 shadow-xll lg:w-1/2 mx-auto p-4 font-bold text-white rounded-md'>MY Total Orders: {setShowProducts[0]?.role} {showProducts.length}</p></div>
             <div className="overflow-x-auto">
                 <table className="table table-compact w-full">
                     <thead>

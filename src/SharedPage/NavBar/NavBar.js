@@ -93,7 +93,7 @@ const NavBar = () => {
                     to="/register"
                     className="inline-flex items-center justify-center h-12 px-6 font-medium rounded  bg-rose-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-rose-700 focus:outline-none focus:ring active:bg-rose-500 sm:w-auto"
                     aria-label="Sign up"
-                    title="Sign up"
+                    title="Register"
                   >
                     Register
                   </Link>

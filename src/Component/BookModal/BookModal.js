@@ -5,7 +5,7 @@ import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
 
 const BookModal = ({bookItem}) => {
    
-    const { picture, resalePrice, title, userInfo}=bookItem;
+    const { picture, resalePrice, title, userInfo,_id}=bookItem;
     const {email:sellerEmail} = userInfo;
     console.log(sellerEmail)
     
@@ -57,7 +57,26 @@ const BookModal = ({bookItem}) => {
             })
     }
 
+    const Status ={
+      Status:'sold'
+    }
+const handleStatus=id=>{
+  fetch(`http://localhost:5000/updateProduct/${id}`,{
+            method:"PUT",
+            headers:{
+                "content-type":"application/json"
+            },
+            body:JSON.stringify(Status)
 
+        })
+        .then (res=>res.json())
+        .then (result=>{
+            if(result.acknowledged){
+
+                toast.success('Advertisement request successful')
+            }
+        })
+}
 
 
 
@@ -156,7 +175,7 @@ const BookModal = ({bookItem}) => {
               </div>
 
               <div className="form-control mt-6">
-                <button type="submit" className="btn btn-primary">
+                <button onClick={()=>handleStatus(_id)} type="submit" className="btn btn-primary">
                   Booked
                 </button>
               </div>

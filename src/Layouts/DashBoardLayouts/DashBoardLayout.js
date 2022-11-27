@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, Outlet } from 'react-router-dom';
+import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 import NavBar from '../../SharedPage/NavBar/NavBar';
 
 const DashBoardLayout = () => {
+
+    const {user}= useContext(AuthContext);
+    console.log(user)
     return (
         <div>
             <NavBar></NavBar>
@@ -15,7 +19,6 @@ const DashBoardLayout = () => {
                     <label htmlFor="dashboard-drawer" className="drawer-overlay"></label>
                     <ul className="menu p-4 w-80 text-base-content">    
                         <li><Link to="/dashBoard/inputCategory">Category Input</Link></li>
-                        <li><Link to="/dashBoard/user">Users</Link></li>
                         <li><Link to="/dashBoard/seller">Manage User and Seller</Link></li>
                         <li><Link to="/dashBoard/advertisement">Show Advertisement</Link></li>
                         <li><Link to="/dashBoard/addProduct">Add Product</Link></li>

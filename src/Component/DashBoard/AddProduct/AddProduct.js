@@ -18,7 +18,7 @@ const AddProduct = () => {
   console.log(userInfo);
   const date = new Date().toLocaleString();
 
-  const [product, SetProduct] = useState({ userInfo, date, Status: "panding",email });
+  const [product, SetProduct] = useState({ userInfo, date, Status: "panding",email,UserStatus:'Unverify' });
   console.log(product);
 
   // Handle Submit

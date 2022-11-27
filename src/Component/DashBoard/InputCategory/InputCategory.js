@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { toast } from 'react-toastify';
+import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
 
 const InputCategory = () => {
-
+const {user}=useContext(AuthContext)
+console.log(user)
   const handleSubmit =e=>{
     e.preventDefault()
     const category =e.target.category.value;
@@ -30,7 +32,7 @@ const InputCategory = () => {
 
     return (
         <div>
-            <div className="w-2/4 mx-auto mt-10 shadow-md rounded-md p-10">
+            <div className="lg:w-2/4 w-full  mx-auto mt-10 shadow-md rounded-md p-10">
       <form
       onSubmit={handleSubmit}
       >

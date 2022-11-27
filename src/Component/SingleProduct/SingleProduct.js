@@ -2,7 +2,8 @@ import React from "react";
 
 const SingleProduct = ({ singleCate ,setBookItem }) => {
     const{condition, Description, category, picture, resalePrice, date, location, originalPrice, title, userInfo}=singleCate
-    const{displayName, photoURL}=userInfo
+    const{displayName, photoURL}=userInfo;
+
   return (
     <div className="card w-96 bg-base-100 shadow-xl">
       <figure>

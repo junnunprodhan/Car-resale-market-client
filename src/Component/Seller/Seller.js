@@ -4,6 +4,7 @@ import axios from "axios";
 import { toast } from 'react-toastify';
 
 const Seller = () => {
+
     const [findUser, setFindUser]=useState()
     console.log(findUser);
     const handleSubmit=event=>{
@@ -36,6 +37,30 @@ const Seller = () => {
                 })
             }
           }
+
+          const Status={
+            Status:"Verified"
+         }
+    
+        const handleAdvertise=id=>{
+             
+            fetch(`http://localhost:5000/users/${id}`,{
+                method:"PUT",
+                headers:{
+                    "content-type":"application/json"
+                },
+                body:JSON.stringify(Status)
+    
+            })
+            .then (res=>res.json())
+            .then (result=>{
+                if(result.acknowledged){
+    
+                    toast.success('Verify successful')
+                }
+            })
+        }
+
     return (
         <div className='mt-10'>
          
@@ -65,9 +90,9 @@ const Seller = () => {
                         <th>Name</th> 
                         <th>Email</th> 
                         <th>User Role</th> 
-                        <th>UPDATE</th> 
-                        <th>DELETE</th>
                         <th>Status</th>
+                        <th>Verify</th> 
+                        <th>DELETE</th>
                     </tr>
                     </thead>
                     <tbody> 
@@ -77,9 +102,14 @@ const Seller = () => {
                             <td>{uInfo.name}</td>
                             <td>{uInfo.email}</td> 
                             <td>{uInfo.role}</td> 
-                            <td> <button className='btn btn-sm bg-warning'> UPDATE</button> </td> 
-                            <td><button onClick={()=>handleDeletes(uInfo._id)} className='btn btn-sm bg-red-600'> DELETE</button></td>
+                           
                             <td>{uInfo.Status}</td>
+                            {
+                                uInfo?.Status === "Verified"? <> <td className='text-green-600 text-xl'>Verified</td></>:<>
+                                <td><button onClick={()=>handleAdvertise(uInfo._id)} className='btn btn-sm bg-blue-500'>Verify</button></td>
+                                </>
+                            }
+                            <td><button onClick={()=>handleDeletes(uInfo._id)} className='btn btn-sm bg-red-600'> DELETE</button></td>
                             </tr>)
                         }      
                     </tbody> 

@@ -37,8 +37,8 @@ const Seller = () => {
             }
           }
     return (
-        <div>
-            <h1>this is seller component</h1>
+        <div className='mt-10'>
+         
             
             <form onSubmit={handleSubmit} className="card flex-shrink-0 mx-auto w-full max-w-sm shadow-2xl bg-base-100">
                 <div className="card-body">

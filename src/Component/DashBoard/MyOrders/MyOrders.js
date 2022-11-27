@@ -26,7 +26,7 @@ const MyOrders = () => {
                 if(data.deletedCount > 0){
                   const remaining = showProducts.filter(r => r._id !== id);
                   setShowProducts(remaining);
-                    toast.success('product delete successfully')
+                    toast.success('Order delete successfully')
                 }
             })
         }
@@ -34,7 +34,7 @@ const MyOrders = () => {
     return (
         <>
         <div>
-            <div className='text-center my-10'><p className='text-3xl'>Total  {setShowProducts[0]?.role} {showProducts.length}</p></div>
+            <div className='text-center my-10'><p className='text-3xl font-bold text-red-700'>MY Total Orders: {setShowProducts[0]?.role} {showProducts.length}</p></div>
             <div className="overflow-x-auto">
                 <table className="table table-compact w-full">
                     <thead>

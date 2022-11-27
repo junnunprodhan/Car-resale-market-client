@@ -1,18 +1,21 @@
-import React, { useContext, useState } from "react";
+import React, { useContext} from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
 
 const BookModal = ({bookItem}) => {
    
-    const {Condition, Description, category, picture, resalePrice, date, location, originalPrice, title, userInfo}=bookItem
+    const { picture, resalePrice, title, userInfo}=bookItem;
+    const {email:sellerEmail} = userInfo;
+    console.log(sellerEmail)
+    
+    console.log(sellerEmail)
     const{user}=useContext(AuthContext)
     const photoURL=user?.photoURL;
     const email =user?.email
     const displayName=user.displayName;
     const navigate=useNavigate()
 
-    console.log(Condition, Description, category, picture, resalePrice, date, location, originalPrice, title, userInfo);
     const handleBooking = event => {
         event.preventDefault();
         const form = event.target;
@@ -30,10 +33,11 @@ const BookModal = ({bookItem}) => {
             meetLocation,
             meetTime,
             picture,
-            photoURL
+            photoURL,
+            sellerEmail
            
         }
-        console.log(title,displayName,email,resalePrice,phoneNumber,meetLocation,meetTime,photoURL)
+      
         fetch('http://localhost:5000/booking', {
             method: "POST",
             headers: {

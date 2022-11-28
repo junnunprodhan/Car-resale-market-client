@@ -18,3 +18,6 @@
 
 ## client site link https://car-resale-market.web.app/
 ## server site link https://car-resale-market-server.vercel.app/
+
+Admin email : admin@gmail.com
+admin password : 123456

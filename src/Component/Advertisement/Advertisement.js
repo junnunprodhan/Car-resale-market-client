@@ -42,7 +42,7 @@ const Advertisement = () => {
   };
 
   const handleAdvertise = (id) => {
-    fetch(`https://car-resale-market-server.vercel.app/showAdvertise/${id}`, {
+    fetch(`https://car-resale-market-server.vercel.app/updateProduct/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

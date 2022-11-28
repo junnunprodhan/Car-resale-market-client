@@ -33,7 +33,7 @@ const MyProducts = () => {
         .then (result=>{
             if(result.acknowledged){
 
-                toast.success('Advertisement request successful')
+                toast.success('Advertisement successful')
             }
         })
     }

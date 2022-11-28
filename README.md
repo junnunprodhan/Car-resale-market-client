@@ -16,5 +16,5 @@
 - Private Rout
 - tailwind component
 
-## client site link https://photography-d190d.web.app/
-## server site link https://photography-server.vercel.app/
+## client site link https://car-resale-market.web.app/
+## server site link https://car-resale-market-server.vercel.app/

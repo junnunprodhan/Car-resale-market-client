@@ -13,7 +13,7 @@ console.log(user)
       category,
     }
 
-    fetch('http://localhost:5000/category',{
+    fetch('https://car-resale-market-server.vercel.app/category',{
             method:"POST",
             headers:{
                 "content-type":"application/json"

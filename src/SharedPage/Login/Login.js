@@ -19,7 +19,7 @@ const {signin,signInWithGoogle}= useContext(AuthContext)
         .then(result => {
           const user=result.user
           
-          fetch(`http://localhost:5000/jwt`,{
+          fetch(`https://car-resale-market-server.vercel.app/jwt`,{
             method:'POST',
             headers:{'content-type':'application/json'},
             body:JSON.stringify({currentUser:user.email})
@@ -48,7 +48,7 @@ const {signin,signInWithGoogle}= useContext(AuthContext)
           role
         }
 
-        fetch('http://localhost:5000/users',{
+        fetch('https://car-resale-market-server.vercel.app/users',{
       method:"POST",
       headers:{
         "content-type":"application/json"

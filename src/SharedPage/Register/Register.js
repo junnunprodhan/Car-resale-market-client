@@ -44,7 +44,7 @@ const Register = () => {
 
 
       // data send db
-    fetch('http://localhost:5000/users',{
+    fetch('https://car-resale-market-server.vercel.app/users',{
       method:"POST",
       headers:{
         "content-type":"application/json"
@@ -92,7 +92,7 @@ const Register = () => {
         role
       }
 
-      fetch('http://localhost:5000/users',{
+      fetch('https://car-resale-market-server.vercel.app/users',{
     method:"POST",
     headers:{
       "content-type":"application/json"

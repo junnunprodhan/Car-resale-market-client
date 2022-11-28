@@ -9,20 +9,20 @@ const Advertisement = () => {
 //   const { data: showProducts = [] } = useQuery({
 //     queryKey: ["product"],
 //     queryFn: () =>
-//       fetch("http://localhost:5000/product").then((res) => res.json()),
+//       fetch("https://car-resale-market-server.vercel.app/product").then((res) => res.json()),
 //   });
 
   const [showProducts, setShowProducts]=useState([])
       useEffect(()=>{
           axios
-          .get('http://localhost:5000/product')
+          .get('https://car-resale-market-server.vercel.app/product')
           .then((res) => setShowProducts(res.data));
       },[])
   // handle Delete
   const handleDelete = (id) => {
     const agree = window.confirm("you want to delete");
     if (agree) {
-      fetch(`http://localhost:5000/productDelete/${id}`, {
+      fetch(`https://car-resale-market-server.vercel.app/productDelete/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
@@ -42,7 +42,7 @@ const Advertisement = () => {
   };
 
   const handleAdvertise = (id) => {
-    fetch(`http://localhost:5000/showAdvertise/${id}`, {
+    fetch(`https://car-resale-market-server.vercel.app/showAdvertise/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

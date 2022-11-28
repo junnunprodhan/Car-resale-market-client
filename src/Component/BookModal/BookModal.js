@@ -38,7 +38,7 @@ const BookModal = ({bookItem}) => {
            
         }
       
-        fetch('http://localhost:5000/booking', {
+        fetch('https://car-resale-market-server.vercel.app/booking', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
@@ -61,7 +61,7 @@ const BookModal = ({bookItem}) => {
       Status:'sold'
     }
 const handleStatus=id=>{
-  fetch(`http://localhost:5000/updateProduct/${id}`,{
+  fetch(`https://car-resale-market-server.vercel.app/updateProduct/${id}`,{
             method:"PUT",
             headers:{
                 "content-type":"application/json"

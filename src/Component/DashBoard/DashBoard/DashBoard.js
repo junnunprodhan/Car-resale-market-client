@@ -5,7 +5,7 @@ import InputCategory from '../InputCategory/InputCategory';
 const DashBoard = () => {
     return (
         <div>
-            <InputCategory></InputCategory>
+           
         </div>
     );
 };

@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
+import Spiner from '../../Component/Spiner/Spiner';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 
 
@@ -8,7 +9,7 @@ const PrivateRoute = ({children}) => {
     const location = useLocation();
 
     if(loading){
-        return <progress className="progress mx-auto w-56"></progress>
+        return <Spiner></Spiner>
     }
 
     if(!user){

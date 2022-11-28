@@ -26,7 +26,7 @@ const AddProduct = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    fetch("http://localhost:5000/product", {
+    fetch("https://car-resale-market-server.vercel.app/product", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -54,7 +54,7 @@ const AddProduct = () => {
   };
 
     useEffect(()=>{
-        fetch('http://localhost:5000/category')
+        fetch('https://car-resale-market-server.vercel.app/category')
         .then(res=>res.json())
         .then(data=>setCategory(data))
     },[])

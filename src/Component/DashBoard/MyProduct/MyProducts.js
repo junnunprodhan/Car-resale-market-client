@@ -11,17 +11,17 @@ const MyProducts = () => {
 
         useEffect(()=>{
             axios
-            .get(`http://localhost:5000/myProduct/${email}`)
+            .get(`https://car-resale-market-server.vercel.app/myProduct/${email}`)
             .then((res) => setShowProducts(res.data));
         },[email])
 
      const Status={
-        Status:"Advertise request"
+        Status:"Advertised"
      }
 
     const handleAdvertise=id=>{
          
-        fetch(`http://localhost:5000/updateProduct/${id}`,{
+        fetch(`https://car-resale-market-server.vercel.app/updateProduct/${id}`,{
             method:"PUT",
             headers:{
                 "content-type":"application/json"
@@ -41,7 +41,7 @@ const MyProducts = () => {
     const handleDelete = id=>{
         const agree =window.confirm('you want to delete')
         if(agree){
-            fetch(`http://localhost:5000/productDelete/${id}`,{
+            fetch(`https://car-resale-market-server.vercel.app/productDelete/${id}`,{
                 method:'DELETE'
             })
             .then(res=>res.json())
@@ -57,7 +57,7 @@ const MyProducts = () => {
     
     return (
         <div className='mt-10'>
-            <h1 className='md:text-5xl text-3xl text-center mb-10 bg-gradient-to-r from-pink-500 via-red-500 to-red-900 shadow-xll lg:w-1/2 mx-auto p-4 font-bold text-white rounded-md'>My Products</h1>
+            <h1 className='md:text-5xl text-3xl text-center mb-10 bg-gradient-to-r from-pink-500 via-red-500 to-red-900 shadow-xll lg:w-1/2 mx-auto p-4 font-bold text-white rounded-md'>My Products :{showProducts.length}</h1>
             <div className='grid grid-cols-1 gap-6 m-5 lg:grid-cols-2'>
                 {showProducts.map(product=><Card handleDelete={handleDelete} handleAdvertise={handleAdvertise} product={product} key={product._id}></Card>)}
             </div>

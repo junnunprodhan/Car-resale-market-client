@@ -6,7 +6,7 @@ import { toast } from 'react-toastify';
 const Seller = () => {
 
     const [findUser, setFindUser]=useState()
-    console.log(findUser);
+  
     const handleSubmit=event=>{
         event.preventDefault()
         const form=event.target
@@ -17,14 +17,14 @@ const Seller = () => {
         const [dbUser, setDbUser]=useState([])
         useEffect(()=>{
             axios
-            .get(`http://localhost:5000/users/${findUser}`)
+            .get(`https://car-resale-market-server.vercel.app/users/${findUser}`)
             .then((res) => setDbUser(res.data));
         },[findUser])
         
         const handleDeletes = id=>{
             const agree =window.confirm('you want to delete')
             if(agree){
-                fetch(`http://localhost:5000/usersDelete/${id}`,{
+                fetch(`https://car-resale-market-server.vercel.app/usersDelete/${id}`,{
                     method:'DELETE'
                 })
                 .then(res=>res.json())
@@ -44,7 +44,7 @@ const Seller = () => {
     
         const handleAdvertise=id=>{
              
-            fetch(`http://localhost:5000/users/${id}`,{
+            fetch(`https://car-resale-market-server.vercel.app/users/${id}`,{
                 method:"PUT",
                 headers:{
                     "content-type":"application/json"

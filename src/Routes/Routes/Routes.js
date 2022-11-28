@@ -16,6 +16,7 @@ import DashBoardLayout from "../../Layouts/DashBoardLayouts/DashBoardLayout";
 import Main from "../../Layouts/Main/Main";
 import Login from "../../SharedPage/Login/Login";
 import Register from "../../SharedPage/Register/Register";
+import AdminRoute from "../AdminRoute/AdminRoute";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 
@@ -44,7 +45,7 @@ export const routes = createBrowserRouter([
             {
                 path: '/categoryProduct/:id',
                 element: <PrivateRoute><SIngleCategory></SIngleCategory></PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/product/${params.id}`)
+                loader: ({params}) => fetch(`https://car-resale-market-server.vercel.app/product/${params.id}`)
             },
            
         ]
@@ -68,7 +69,7 @@ export const routes = createBrowserRouter([
             },
             {
                 path:'/dashBoard/seller',
-                element:<Seller></Seller>
+                element:<AdminRoute><Seller></Seller></AdminRoute>
             },
             {
                 path:'/dashBoard/addProduct',

@@ -11,14 +11,14 @@ const MyOrders = () => {
 
         useEffect(()=>{
             axios
-            .get(`http://localhost:5000/booking/${email}`)
+            .get(`https://car-resale-market-server.vercel.app/booking/${email}`)
             .then((res) => setShowProducts(res.data));
         },[email])
 
     const handleDelete = id=>{
         const agree =window.confirm('you want to delete')
         if(agree){
-            fetch(`http://localhost:5000/bookingDelete/${id}`,{
+            fetch(`https://car-resale-market-server.vercel.app/bookingDelete/${id}`,{
                 method:'DELETE'
             })
             .then(res=>res.json())
